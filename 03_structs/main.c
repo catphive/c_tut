@@ -1,25 +1,25 @@
 #include <stdio.h>
 
 struct record {
-	char* name;
-	int age;
+    char* name;
+    int age;
 };
 
 void print_record(struct record rec) {
-	printf("%s: %d\n", rec.name, rec.age);
+    printf("%s: %d\n", rec.name, rec.age);
 }
 
 void initialize_and_print_record() {
-	puts(__func__);
-	struct record rec;
-	/* rec is undefined!
-	   print_record(rec); would spit out garbage. */
+    puts(__func__);
+    struct record rec;
+    /* rec is undefined!
+       print_record(rec); would spit out garbage. */
 
-	rec.name = "Robert Redford";
-	rec.age = 42;
+    rec.name = "Robert Redford";
+    rec.age = 42;
 
-	/* now rec's value is defined, and it is safe to use. */
-	print_record(rec);
+    /* now rec's value is defined, and it is safe to use. */
+    print_record(rec);
 }
 
 /* Typedefs create type aliases. They are just another name for the original
@@ -37,7 +37,7 @@ typedef struct record record_t;
     typedef struct {
         char* name;
         int age;
-	 } record_t;
+     } record_t;
 */
 
 /* Assigning one struct to another copies elements memberwise.
@@ -47,16 +47,16 @@ typedef struct record record_t;
  */
 
 void struct_assignment() {
-	puts(__func__);
-	record_t rec1;
-	rec1.name = "Herbert Hoover";
-	rec1.age = 86;
-	
-	/* copies each element from rec1 */
-	record_t rec2 = rec1;
+    puts(__func__);
+    record_t rec1;
+    rec1.name = "Herbert Hoover";
+    rec1.age = 86;
+    
+    /* copies each element from rec1 */
+    record_t rec2 = rec1;
 
-	/* make rec1 and rec2 have different values */
-	rec2.age = 26;
+    /* make rec1 and rec2 have different values */
+    rec2.age = 26;
 }
 
 /* Structs can also be passed to a function by value and returned by value.
@@ -65,15 +65,15 @@ void struct_assignment() {
  */
 
 record_t make_record(char* name, int age) {
-	record_t rec;
-	rec.name = name;
-	rec.age = age;
+    record_t rec;
+    rec.name = name;
+    rec.age = age;
 }
 
 void return_struct_by_value() {
-	puts(__func__);
-	record_t rec = make_record("Franklin D. Roosevelt", 55);
-	print_record(rec);
+    puts(__func__);
+    record_t rec = make_record("Franklin D. Roosevelt", 55);
+    print_record(rec);
 }
 
 /* Sometimes copying member by member is not what you want... especially if the
@@ -88,29 +88,29 @@ void return_struct_by_value() {
    Elements in list initialize structure member by member based on order.
  */
 void initialize_record_with_initializer_list() {
-	puts(__func__);
-	record_t rec = {"Warren G. Harding", 34};
-	print_record(rec);
+    puts(__func__);
+    record_t rec = {"Warren G. Harding", 34};
+    print_record(rec);
 }
 
 /* For pointers to structures, there is a special short hand
    syntax to get members.
 */
 void print_record_ptr(record_t* rec) {
-	/* rec->name is shorthand for (*rec).name */
-	printf("%s: %d\n", rec->name, rec->age);
+    /* rec->name is shorthand for (*rec).name */
+    printf("%s: %d\n", rec->name, rec->age);
 }
 
 void pointer_to_structure() {
-	puts(__func__);
-	record_t rec = {"Calvin Coolidge", 84};
-	print_record_ptr(&rec);
+    puts(__func__);
+    record_t rec = {"Calvin Coolidge", 84};
+    print_record_ptr(&rec);
 }
 
 int main(int argc, char* argv[]) {
-	initialize_and_print_record();
-	struct_assignment();
-	return_struct_by_value();
-	initialize_record_with_initializer_list();
-	pointer_to_structure();
+    initialize_and_print_record();
+    struct_assignment();
+    return_struct_by_value();
+    initialize_record_with_initializer_list();
+    pointer_to_structure();
 }
