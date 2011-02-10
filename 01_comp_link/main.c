@@ -6,7 +6,7 @@
   1. The C preprocessor (called cpp on unix) takes in main.c and helper.h and
      generates the translation unit main.i.
   
-     main.i is the actual C language document. Preprossor directives such as
+     main.i is the actual C language document. Preprocessor directives such as
      #include are part of the preprocessor language, not the C language proper.
 
   2. main.i is passed to the C compiler (gcc). The C compiler generates assembly
