@@ -61,7 +61,7 @@ http://webstore.ansi.org/RecordDetail.aspx?sku=AS%203955-1991
 
 == C99 ==
 
-In 1999 a new C standard was written. Some C99 extensions are widely implemneted
+In 1999 a new C standard was written. Some C99 extensions are widely implemented
 in compilers, but some have largely been ignored. Projects that want maximum
 portability either restrict themselves to C89, or avoid using C99 constructs
 that aren't widely implemented.
