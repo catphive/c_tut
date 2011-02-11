@@ -1,0 +1,143 @@
+= The C Programming Language: A Tutorial =
+
+= History =
+
+C was developed by Dennis Ritchie in 1969 in order to write the Unix operating
+system.
+
+At that time, most operating systems were written in assembly, including early
+versions of Unix. Because assembly language differs between processors, every
+new kind of processor needed a new operating system. C forms a portable
+abstraction over the assembly language.
+
+Because C is a minamalistic langauge, C compilers are relatively easy to write.
+Because C produces fairly efficient assembly code, it's possible to write fast
+programs in C. For these reasons, C became very popular, and today pretty
+much every operating system is written in C.
+
+= What C Is Used For =
+
+C is used to write both operating system kernels,the piece of software that
+mediates access to the hardware, and low level system libraries. C is also
+heavily used in embedded development.
+
+Because by default C has no garbage collector and has a very minimalistic
+runtime, it is ideal for situations where space and time requirements are
+tight.
+
+C is also a decent choice for libraries because most higher level languages
+know how to call C functions and use C datastructures.
+
+C is also used in a vast swath of legacy code, due to its historical popularity.
+Knowing C is useful for working with many of the large code bases in existence.
+
+Because C has been standardized for a long time, it is probably the most
+portable programming language. C runs on many platforms for which there
+are no other programming languages.
+
+= What You Shouldn't Use C For =
+
+C is an extremely minimalistic and low level language. It has no garbage
+collector by default. It also does not do much to prevent the programmer from
+shooting himself in a foot.
+
+For this reason, unless you have a specific need for C, you should pick a higher
+level language.
+
+Good higher level languages include: Python, Lisp, Ruby, Javascript, ML
+
+= C89, C99, and GNU C =
+
+== C89 ==
+
+In 1989 C was standardized by the International Standards Organization (ISO).
+Almost all C compilers have a very complete implementation of the C89 standard.
+You can purchase the standard from ISO or ANSI:
+
+http://webstore.ansi.org/RecordDetail.aspx?sku=AS%203955-1991
+
+== C99 ==
+
+In 1999 a new C standard was written. Some C99 extensions are widely implemneted
+in compilers, but some have largely been ignored. Projects that want maximum
+portability either restrict themselves to C89, or avoid using C99 constructs
+that aren't widely implemented.
+
+http://webstore.ansi.org/RecordDetail.aspx?sku=ISO/IEC+9899:1999
+
+== How To Use Standards ==
+
+These standard documents are not good for learning C, but they are good to have
+when you are doing real C programming. If you need to look up some function or
+syntax in C, the C89 standard gives you an complete reference that is
+NEVER WRONG. That is quite valuable.
+
+== GNU C ==
+
+GNU C is the implementation of C provided by the GCC compiler. It provides many
+extensions to C. Much of C99 was based on extensions provided by GNU C. GNU C
+does not implement all C99 features.
+
+In this tutorial I have used a few C99 features. In particular, C89 requires
+that all variables be declared in a block before any other actions are
+performed:
+
+void f() {
+     int x = 0
+     int y = 0;
+     int z = 0;
+
+     /* other statements*/
+     x = g();
+}
+
+However, C99 allows you to mix declarations and other actions, which I prefer.
+
+void f() {
+     int x = g();
+     int y = 0;
+     int z = 0;
+}
+
+= C++ and C++0x =
+
+C++ is a language derived from C. While C is minimalistic, C++ provides many
+features including:
+1. templates
+2. better memory management through RAII techniques
+3. exceptions for error handling
+4. operating overloading
+5. namespaces
+6. object orientation
+7. a much larger standard library with common datastructure and algorithms
+
+C++0x is a new standard for C++ that adds even more features:
+
+1. better support for functional programming with lambdas
+2. more efficiency with R value references and move constructors
+3. a standard multithreading library
+4. better support for template programming
+5. more datastructures and algorithms
+6. more and better smart pointers
+7. lots of miscelanious improvements and fixes
+
+http://en.wikipedia.org/wiki/C%2B%2B0x
+
+C++ is derived from C, but the C programming style is not appropriate in C++. In
+fact, exceptions will break some patterns common in C programming.
+
+This tutorial is geared towards learning C++ as a next step. For that reason I
+try to point out places where a C construct is a bad idea in C++, or if C++
+provides a better alternative.
+
+= Further Reading =
+
+The most recommended book for learning C is The C Programming Language by
+Kernigan and Ritchie. Ritchie is the author of the language itself.
+
+http://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628
+
+Remember when you start writing real world C programs to get a copy of the C89
+standard.
+
+http://webstore.ansi.org/RecordDetail.aspx?sku=AS%203955-1991
