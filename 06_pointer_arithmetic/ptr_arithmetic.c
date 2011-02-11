@@ -166,6 +166,7 @@ void demonstrate_slicing() {
        until the end of the list.
 
        This is why find_char returns end instead of NULL if the char isn't found.
+       We don't need to have any if statements to check error conditions.
     */
 }
 
