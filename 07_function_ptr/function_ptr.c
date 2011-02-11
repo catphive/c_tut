@@ -302,12 +302,12 @@ void capitalize_word_in_string() {
          int count = 0;
          for_each_char(begin, end, function(char* ptr){ ++count; })
 
-      This is called a LAMBDA.
+      This is called a LAMBDA. C++0x has these, but with different syntax.
       
       Standard C doesn't let you do this, although some compilers support
       it as an extension. GNU C has nested functions, which are similar.
 
-      C++0x has lambdas, but with a little bit different syntax.
+      Most modern languages, such as python, javascript, and C# have lambas.
 
    2. for_each_char and find_char_if only work with chars, even though if you
       look at their definition you wouldn't really need to change much to make
