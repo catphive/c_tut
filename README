@@ -5,19 +5,18 @@
 C was developed by Dennis Ritchie in 1969 in order to write the Unix operating
 system.
 
-At that time, most operating systems were written in assembly, including early
-versions of Unix. Because assembly language differs between processors, every
-new kind of processor needed a new operating system. C forms a portable
-abstraction over the assembly language.
+At that time Unix was written in assembly language. Because assembly language
+differs between processors, every new kind of processor needed a new operating
+system. C forms a portable abstraction over the assembly language.
 
-Because C is a minamalistic langauge, C compilers are relatively easy to write.
+Because C is a minimalistic langauge, C compilers are relatively easy to write.
 Because C produces fairly efficient assembly code, it's possible to write fast
 programs in C. For these reasons, C became very popular, and today pretty
-much every operating system is written in C.
+much every operating system and many other programs are written in C.
 
 = What C Is Used For =
 
-C is used to write both operating system kernels,the piece of software that
+C is used to write both operating system kernels, the piece of software that
 mediates access to the hardware, and low level system libraries. C is also
 heavily used in embedded development.
 
@@ -25,7 +24,7 @@ Because by default C has no garbage collector and has a very minimalistic
 runtime, it is ideal for situations where space and time requirements are
 tight.
 
-C is also a decent choice for libraries because most higher level languages
+C is a good choice for libraries because most higher level languages
 know how to call C functions and use C datastructures.
 
 C is also used in a vast swath of legacy code, due to its historical popularity.
@@ -45,6 +44,10 @@ For this reason, unless you have a specific need for C, you should pick a higher
 level language.
 
 Good higher level languages include: Python, Lisp, Ruby, Javascript, ML
+
+Computers are extremely fast these days, so usually performance requirements are
+very loose. For instance, Python is very slow, but it almost always does not
+matter.
 
 = C89, C99, and GNU C =
 
@@ -69,8 +72,8 @@ http://webstore.ansi.org/RecordDetail.aspx?sku=ISO/IEC+9899:1999
 
 These standard documents are not good for learning C, but they are good to have
 when you are doing real C programming. If you need to look up some function or
-syntax in C, the C89 standard gives you an complete reference that is
-NEVER WRONG. That is quite valuable.
+syntax in C, the C89 standard gives you an complete reference that is by
+definition NEVER WRONG. That is quite valuable.
 
 == GNU C ==
 
@@ -80,7 +83,7 @@ does not implement all C99 features.
 
 In this tutorial I have used a few C99 features. In particular, C89 requires
 that all variables be declared in a block before any other actions are
-performed:
+performed.
 
 void f() {
      int x = 0
