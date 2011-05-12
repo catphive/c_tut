@@ -2,4 +2,4 @@
 
 set -x
 
-gcc -o const const.c
+gcc -Werror -o const const.c

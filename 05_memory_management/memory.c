@@ -201,6 +201,7 @@ record_t* make_record(int age, int height) {
     }
     rec->age = age;
     rec->height = height;
+    return rec;
 }
 
 void gain_ownership_of_record() {

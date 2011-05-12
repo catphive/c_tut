@@ -2,4 +2,4 @@
 
 set -x
 
-gcc -o ptr_arithmetic ptr_arithmetic.c
+gcc -Werror -o ptr_arithmetic ptr_arithmetic.c

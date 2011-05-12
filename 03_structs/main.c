@@ -33,12 +33,16 @@ void initialize_and_print_record() {
 
 typedef struct record record_t;
 
-/* NOTE: could have just written
+/*
+NOTE: could have just written
+
     typedef struct {
         char* name;
         int age;
      } record_t;
+
 */
+
 
 /* Assigning one struct to another copies elements memberwise.
 
@@ -68,6 +72,7 @@ record_t make_record(char* name, int age) {
     record_t rec;
     rec.name = name;
     rec.age = age;
+    return rec;
 }
 
 void return_struct_by_value() {
@@ -113,4 +118,6 @@ int main(int argc, char* argv[]) {
     return_struct_by_value();
     initialize_record_with_initializer_list();
     pointer_to_structure();
+    
+    return 0;
 }
